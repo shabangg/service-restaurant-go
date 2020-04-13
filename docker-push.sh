@@ -3,7 +3,7 @@
 set -ex
 
 SERVICE_NAME=restaurants
-REPO="docker.pkg.github.com/rohan-luthra/microservice-grpc-go/service-$SERVICE_NAME-docker/$SERVICE_NAME"
+REPO="docker.pkg.github.com/rohan-luthra/service-$SERVICE_NAME-docker/$SERVICE_NAME"
 
 COMMIT=$CODEBUILD_RESOLVED_SOURCE_VERSION
 if [[ -z "$COMMIT" ]]; then

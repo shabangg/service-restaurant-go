@@ -140,7 +140,7 @@
   version = "v1.0.0"
 
 [[projects]]
-  digest = "1:a91b999a29bf71efd8671253f77c8854d48d83cef7dc1333bf120fab4c904560"
+  digest = "1:093b96fbb3db40828ecf711043048e8a3c4191fe7a7c10367db736427390f0b2"
   name = "github.com/klauspost/compress"
   packages = [
     "fse",
@@ -150,8 +150,8 @@
     "zstd/internal/xxhash",
   ]
   pruneopts = "UT"
-  revision = "788b7f06fee85b7e1d2aa4a3a86f8dbbbcc771ae"
-  version = "v1.10.3"
+  revision = "e2d2089232ece4911272106ae65a7a06746ea38a"
+  version = "v1.10.4"
 
 [[projects]]
   digest = "1:31e761d97c76151dde79e9d28964a812c46efc5baee4085b86f68f0c654450de"
@@ -214,7 +214,7 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:2e18090be91dc4ad7ffe4644f177983a41f344f90dd9ea7e095e568e79e26435"
+  digest = "0:"
   name = "github.com/rohan-luthra/protorepo-restaurants-go"
   packages = ["."]
   pruneopts = "UT"
@@ -272,12 +272,12 @@
   version = "v1.0.5"
 
 [[projects]]
-  digest = "1:83d0e0f3f46dc86daf27e4d7c834c8c492db787c53c09d94183de7478db92142"
+  digest = "1:2b847e001d1c560af97042148c7e03b455b83cd8cb8ec1c9c786e289885ac089"
   name = "github.com/spf13/viper"
   packages = ["."]
   pruneopts = "UT"
-  revision = "4525543ce4fe90f7970f5e2cdc300b8ffc8c0582"
-  version = "v1.6.2"
+  revision = "59b19175035095196a623aac8d0f5c83481f3d77"
+  version = "v1.6.3"
 
 [[projects]]
   digest = "1:f4b32291cad5efac2bfdba89ccde6aa04618b62ce06c1a571da2dc4f3f2677fb"
@@ -286,29 +286,6 @@
   pruneopts = "UT"
   revision = "2ef7124db659d49edac6aa459693a15ae36c671a"
   version = "v1.2.0"
-
-[[projects]]
-  branch = "master"
-  digest = "1:9d7306d77aed9cde3906905eafebe6f28edb5cfe18d9d0360b86dfd49ef315c5"
-  name = "github.com/rohan-luthra/protorepo-restaurants-go"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "19f14a3252d61a10881436ffe402fa2a21463139"
-
-[[projects]]
-  branch = "master"
-  digest = "1:fe5ab5e406756addec220dd590b15e3ea58517e9f65d3eebc974ef2608d0e6b6"
-  name = "github.com/rohan-luthra/microservice-grpc-go/service-restaurants-go"
-  packages = [
-    "src/api",
-    "src/app",
-    "src/cmd",
-    "src/db",
-    "src/kafka",
-    "src/model",
-  ]
-  pruneopts = "UT"
-  revision = "14d02dafc0ef7b4c7c65ca0ced5408625834bb7d"
 
 [[projects]]
   branch = "master"
@@ -327,7 +304,7 @@
   revision = "73f8eece6fdcd902c185bf651de50f3828bed5ed"
 
 [[projects]]
-  digest = "1:4e4a37dcd6256af87909b0a756c3e119e53436de35ac7fd1f47e65289a881be9"
+  digest = "1:69bfe5ee56ac436a74298c8be4642907c84da2f4be05067799d1f1fc53fe8e84"
   name = "go.mongodb.org/mongo-driver"
   packages = [
     "bson",
@@ -363,8 +340,8 @@
     "x/mongo/driver/wiremessage",
   ]
   pruneopts = "UT"
-  revision = "17ea4abd2ac121376c1f782964fce1c3ee692915"
-  version = "v1.3.1"
+  revision = "dbe9cee06654c7d19e291eb74b9da49b4c6a0fd4"
+  version = "v1.3.2"
 
 [[projects]]
   branch = "master"
@@ -375,7 +352,7 @@
     "pbkdf2",
   ]
   pruneopts = "UT"
-  revision = "baeed622b8d86045ff442b324772b0ad306a2b3f"
+  revision = "056763e48d71961566155f089ac0f02f1dda9b5a"
 
 [[projects]]
   branch = "master"
@@ -404,11 +381,11 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:51aadd22b5fe49e6adfe95562e70e8c0058d99984a84ac3af7715af322b5c7dd"
+  digest = "1:7d260271d98dc74100eff620ec75cb6cdd320f71598d51748eed99d3177125f2"
   name = "golang.org/x/sys"
   packages = ["unix"]
   pruneopts = "UT"
-  revision = "c6e801f48ba2ad620ea6c8fe8899fb80af386135"
+  revision = "59c9f1ba88faf592b225274f69c5ef1e4ebacf82"
 
 [[projects]]
   digest = "1:8d8faad6b12a3a4c819a3f9618cb6ee1fa1cfc33253abeeea8b55336721e3405"
@@ -441,10 +418,10 @@
   name = "google.golang.org/genproto"
   packages = ["googleapis/rpc/status"]
   pruneopts = "UT"
-  revision = "33397c535dc2c2a2b6e751a1aca1bc59f3f7859d"
+  revision = "0848e9f44c368a0543357679c19d4eab1177012f"
 
 [[projects]]
-  digest = "1:6f8247c9e17a66a2ece1e95161e521d5de9e7b5b5ffc4ca449da8c6ad3e448b9"
+  digest = "1:f5fd2b968077b969e1027a3864a4ee714ce23c9cfab9b43764c20c893f03db9f"
   name = "google.golang.org/grpc"
   packages = [
     ".",
@@ -490,8 +467,8 @@
     "tap",
   ]
   pruneopts = "UT"
-  revision = "142182889d38b76209f1d9f1d8e91d7608aff542"
-  version = "v1.28.0"
+  revision = "ac54eec90516cee50fc6b9b113b34628a85f976f"
+  version = "v1.28.1"
 
 [[projects]]
   digest = "1:a064971c78455f088b48483cf48a61dbe2f173dc02043cf76a06e19acba3c5e4"
@@ -590,13 +567,6 @@
     "github.com/sirupsen/logrus",
     "github.com/spf13/cobra",
     "github.com/spf13/viper",
-    "github.com/rohan-luthra/protorepo-restaurants-go",
-    "github.com/rohan-luthra/microservice-grpc-go/service-restaurants-go/src/api",
-    "github.com/rohan-luthra/microservice-grpc-go/service-restaurants-go/src/app",
-    "github.com/rohan-luthra/microservice-grpc-go/service-restaurants-go/src/cmd",
-    "github.com/rohan-luthra/microservice-grpc-go/service-restaurants-go/src/db",
-    "github.com/rohan-luthra/microservice-grpc-go/service-restaurants-go/src/kafka",
-    "github.com/rohan-luthra/microservice-grpc-go/service-restaurants-go/src/model",
     "go.mongodb.org/mongo-driver/bson",
     "go.mongodb.org/mongo-driver/bson/primitive",
     "go.mongodb.org/mongo-driver/mongo",

@@ -58,6 +58,3 @@
   name = "github.com/Shopify/sarama"
   version = "1.26.1"
 
-[[constraint]]
-  branch = "master"
-  name = "github.com/rohan-luthra/protorepo-restaurants-go"

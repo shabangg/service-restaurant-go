@@ -1,5 +1,5 @@
 FROM golang:alpine AS builder
-LABEL maintainer="rohanluthra <rohanluthra.1123@gmail.com"
+LABEL maintainer="rohanluthra <rohanluthra.1123@gmail.com>"
 
 # define system module and update them
 RUN apk update \
