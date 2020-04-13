@@ -1,0 +1,10 @@
+databaseuri : mongodb+srv://user:user@cluster0-88spv.mongodb.net/master_new_copied?retryWrites=true&w=majority
+database: master_new_copied
+port: 3000
+secretkey: secretKey
+kafka_brokers : localhost:19092,localhost:29092,localhost:39092
+kafka_group_id: restaurant_service_group
+kafka_topics: restaurants
+kafka_verbose: false
+kafka_version: 2.1.1
+kafka_assignor: range
