@@ -8,11 +8,8 @@ node {
 
 
     stage('Pre Test'){
-
-         withEnv(["GOPATH=${WORKSPACE}", "PATH+GO=${root}/bin:${WORKSPACE}/bin", "GOBIN=${WORKSPACE}/bin"]){
-
-            echo 'Pulling Dependencies'
-
+        echo 'Pulling Dependencies'
+        withEnv(["GOPATH=${WORKSPACE}", "PATH+GO=${root}/bin:${WORKSPACE}/bin", "GOBIN=${WORKSPACE}/bin"]){
             try{
                 sh 'go version'
                 sh 'go get -u github.com/golang/dep/cmd/dep'
