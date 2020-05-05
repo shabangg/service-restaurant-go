@@ -1,5 +1,5 @@
 node {
-    def root = tool name: 'Go 1.8', type: 'go'
+    def root = tool name: 'Go 1.13.7', type: 'go'
     
     stage('Checkout'){
         echo 'Checking out SCM'
