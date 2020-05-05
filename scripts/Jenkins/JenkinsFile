@@ -11,7 +11,6 @@ node {
         echo 'Pulling Dependencies'
 
         withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin"]) {
-            env.PATH="${GOPATH}/bin:$PATH"
 
             sh 'go version'
             sh 'go get -u github.com/golang/dep'
