@@ -13,7 +13,7 @@ node {
     
             sh 'go version'
             sh 'go get -u github.com/golang/dep/cmd/dep'
-            sh 'go get -u github.com/golang/lint/golint'
+            // sh 'go get -u github.com/golang/lint/golint'
             sh 'dep ensure -vendor-only -v'
 
         }
