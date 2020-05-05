@@ -20,7 +20,7 @@ type Currency struct {
 	UpdatedAt time.Time `bson:"Updated_at,omitempty"`
 }
 
-func (model *Currency) ToCurrency() (*restaurant.Currency, error) {
+func ToCurrency(model *Currency) (*restaurant.Currency, error) {
 
 	createdAt, err := ptypes.TimestampProto(model.CreatedAt)
 	if err != nil {

@@ -7,10 +7,10 @@ import (
 )
 
 func init() {
-	RootCmd.AddCommand(versionCmd)
+	RootCmd.AddCommand(VersionCmd)
 }
 
-var versionCmd = &cobra.Command{
+var VersionCmd = &cobra.Command{
 	Use:   "version",
 	Short: "Print the version number",
 	Run: func(cmd *cobra.Command, args []string) {

@@ -3,7 +3,7 @@
 set -ex
 
 SERVICE_NAME=restaurants
-REPO="docker.pkg.github.com/rohan-luthra/service-$SERVICE_NAME-docker/$SERVICE_NAME"
+REPO="docker.pkg.github.com/rohan-luthra/service-$SERVICE_NAME-docker/service-$SERVICE_NAME"
 
 COMMIT=$CODEBUILD_RESOLVED_SOURCE_VERSION
 if [[ -z "$COMMIT" ]]; then
@@ -38,6 +38,7 @@ echo "Building docker image..."
 sudo docker build -f scripts/docker/Dockerfile -t $REPO:$COMMIT .
 sudo docker tag $REPO:$COMMIT $REPO:$TAG
 
-cat token.txt | sudo docker login docker.pkg.github.com -u "rohan-luthra/microservice-grpc-go" --password-stdin
+cat token.txt | sudo docker login docker.pkg.github.com -u "rohan-luthra" --password-stdin
 echo "Pushing docker image..."
 sudo docker push $REPO:$TAG
+echo "Successfully pushed docker image"

@@ -13,8 +13,12 @@ import (
 
 // Database base type struct
 type Database struct {
-	*mongo.Client
-	Kafka *kafka.Kafka
+	Client                    *mongo.Client
+	RestaurantCollection      *mongo.Collection
+	TaxCollection             *mongo.Collection
+	CurrencyCollection        *mongo.Collection
+	RestaurantGroupCollection *mongo.Collection
+	Kafka                     *kafka.Kafka
 }
 
 // New mongodb database instance
@@ -43,7 +47,17 @@ func New(config *Config) (error, *Database) {
 		return err, nil
 	}
 
-	// restaurantCollection := client.Database(config.Database).Collection("restaurants")
+	restaurantCollection := client.Database(config.Database).Collection("restaurants")
+	taxCollection := client.Database(config.Database).Collection("taxes")
+	currencyCollection := client.Database(config.Database).Collection("currencies")
+	restaurantGroupCollection := client.Database(config.Database).Collection("restaurant_group")
 
-	return nil, &Database{client, k}
+	return nil, &Database{
+		Client:                    client,
+		RestaurantCollection:      restaurantCollection,
+		TaxCollection:             taxCollection,
+		CurrencyCollection:        currencyCollection,
+		RestaurantGroupCollection: restaurantGroupCollection,
+		Kafka:                     k,
+	}
 }

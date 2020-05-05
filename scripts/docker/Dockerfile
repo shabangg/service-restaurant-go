@@ -16,15 +16,19 @@ WORKDIR /go/src/github.com/rohan-luthra/microservice-grpc-go/service-restaurants
 
 # install dependencies
 COPY Gopkg.* ./
-RUN dep ensure -vendor-only -v
+# RUN dep ensure -vendor-only -v
 
 # copy source and generate a build
 COPY . .
+RUN ls
+RUN pwd
+
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o main main.go
 
 # use scratch (base for a docker image)
 FROM scratch
 COPY --from=builder /etc/passwd /etc/passwd
+
 
 # set working directory
 WORKDIR /root/

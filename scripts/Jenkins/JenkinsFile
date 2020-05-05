@@ -1,0 +1,29 @@
+pipeline {
+    agent any 
+    stages {
+        stage('Clone repository') { 
+            steps {
+                // cloning git repo
+                checkout scm    
+            }
+        }
+        stage('Pre Test') { 
+            steps {
+                // 
+                echo 'Pulling Dependencies'
+
+                sh 'go version'
+                sh 'go get -u github.com/golang/dep/cmd/dep'
+                sh 'go get -u github.com/golang/lint/golint'
+                sh 'go get github.com/tebeka/go2xunit'
+                sh 'cd $GOPATH/src/cmd/project && dep ensure'
+            }
+        }
+        stage('Test') { 
+            steps {
+                // 
+                echo "Testing"
+            }
+        }
+    }
+}

@@ -1,8 +1,6 @@
 package app
 
 import (
-	"context"
-
 	"github.com/rohan-luthra/microservice-grpc-go/service-restaurants-go/src/db"
 	"github.com/rohan-luthra/microservice-grpc-go/service-restaurants-go/src/kafka"
 	"github.com/sirupsen/logrus"
@@ -48,5 +46,6 @@ func New() (app *App, err error) {
 
 // Close close the database
 func (app *App) Close() error {
-	return app.Database.Disconnect(context.TODO())
+	// return app.Database.Client.Disconnect(context.TODO())
+	return nil
 }

@@ -58,7 +58,7 @@
   version = "v1.8.0"
 
 [[projects]]
-  digest = "1:e3f60c1c88c0c63fc6566d6a7958c66a1ccf9800d334fde13d2ba26dc1a3f76b"
+  digest = "1:2a96a3a5f92ebc3b5f03cad2b225d94816e248fa72459a8f83f7a54cc6869bbd"
   name = "github.com/golang/protobuf"
   packages = [
     "proto",
@@ -69,8 +69,8 @@
     "ptypes/timestamp",
   ]
   pruneopts = "UT"
-  revision = "84668698ea25b64748563aa20726db66a6b8d299"
-  version = "v1.3.5"
+  revision = "1b794fe86dd6a0c7c52ae69b5c9cb0aeedc52afa"
+  version = "v1.4.0"
 
 [[projects]]
   branch = "master"
@@ -214,11 +214,11 @@
 
 [[projects]]
   branch = "master"
-  digest = "0:"
+  digest = "1:ed44d8c7407189ab5fee29dedff1b60dd9507c087de721d960ec8c46a9e731f1"
   name = "github.com/rohan-luthra/protorepo-restaurants-go"
   packages = ["."]
   pruneopts = "UT"
-  revision = "0b3ffc0b89f5983f9b2bd4de0318a7c89a59f3de"
+  revision = "f94a1ecf8b1c67776874d10a851822c865cca791"
 
 [[projects]]
   digest = "1:0599141a8403114d34f1e546604ad6c5361b70dfa80e80c635f438cdbf71b43a"
@@ -345,9 +345,11 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:04b43fe96213ea69cfa6e6b8be218a43a375035ea09d9bdda9fed2691f5a7e76"
+  digest = "1:62b5ccfd10fc790d1961ed147b6d042ff839ae0aa469a5e8dfa9def1dd97b68e"
   name = "golang.org/x/crypto"
   packages = [
+    "bcrypt",
+    "blowfish",
     "md4",
     "pbkdf2",
   ]
@@ -381,11 +383,11 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:7d260271d98dc74100eff620ec75cb6cdd320f71598d51748eed99d3177125f2"
+  digest = "1:f88172369bcdae548777d8f2c59b11561f7e41686f426c583a7abaeec6978cc7"
   name = "golang.org/x/sys"
   packages = ["unix"]
   pruneopts = "UT"
-  revision = "59c9f1ba88faf592b225274f69c5ef1e4ebacf82"
+  revision = "669c56c373c468cbe0f0c12b7939832b26088d33"
 
 [[projects]]
   digest = "1:8d8faad6b12a3a4c819a3f9618cb6ee1fa1cfc33253abeeea8b55336721e3405"
@@ -418,7 +420,7 @@
   name = "google.golang.org/genproto"
   packages = ["googleapis/rpc/status"]
   pruneopts = "UT"
-  revision = "0848e9f44c368a0543357679c19d4eab1177012f"
+  revision = "b5235f65be3618aac92278c41932e3f9007a653a"
 
 [[projects]]
   digest = "1:f5fd2b968077b969e1027a3864a4ee714ce23c9cfab9b43764c20c893f03db9f"
@@ -469,6 +471,46 @@
   pruneopts = "UT"
   revision = "ac54eec90516cee50fc6b9b113b34628a85f976f"
   version = "v1.28.1"
+
+[[projects]]
+  digest = "1:e78af6e9146593cee8b731bd9a77653dd8a610a5280aaf4969706ab83f3627e1"
+  name = "google.golang.org/protobuf"
+  packages = [
+    "encoding/prototext",
+    "encoding/protowire",
+    "internal/descfmt",
+    "internal/descopts",
+    "internal/detrand",
+    "internal/encoding/defval",
+    "internal/encoding/messageset",
+    "internal/encoding/tag",
+    "internal/encoding/text",
+    "internal/errors",
+    "internal/fieldnum",
+    "internal/fieldsort",
+    "internal/filedesc",
+    "internal/filetype",
+    "internal/flags",
+    "internal/genname",
+    "internal/impl",
+    "internal/mapsort",
+    "internal/pragma",
+    "internal/set",
+    "internal/strs",
+    "internal/version",
+    "proto",
+    "reflect/protoreflect",
+    "reflect/protoregistry",
+    "runtime/protoiface",
+    "runtime/protoimpl",
+    "types/descriptorpb",
+    "types/known/anypb",
+    "types/known/durationpb",
+    "types/known/timestamppb",
+  ]
+  pruneopts = "UT"
+  revision = "3b9eee12916ce611400f93d6c2fed2fc2911b0ad"
+  version = "v1.21.0"
 
 [[projects]]
   digest = "1:a064971c78455f088b48483cf48a61dbe2f173dc02043cf76a06e19acba3c5e4"
@@ -558,6 +600,7 @@
   input-imports = [
     "github.com/Shopify/sarama",
     "github.com/golang/protobuf/ptypes",
+    "github.com/golang/protobuf/ptypes/timestamp",
     "github.com/grpc-ecosystem/go-grpc-middleware",
     "github.com/grpc-ecosystem/go-grpc-middleware/ratelimit",
     "github.com/grpc-ecosystem/go-grpc-middleware/recovery",
@@ -572,6 +615,7 @@
     "go.mongodb.org/mongo-driver/mongo",
     "go.mongodb.org/mongo-driver/mongo/options",
     "go.mongodb.org/mongo-driver/mongo/readpref",
+    "golang.org/x/crypto/bcrypt",
     "google.golang.org/grpc",
     "google.golang.org/grpc/codes",
     "google.golang.org/grpc/encoding/gzip",
