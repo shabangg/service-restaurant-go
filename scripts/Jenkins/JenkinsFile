@@ -10,17 +10,15 @@ node {
     stage('Pre Test'){
         echo 'Pulling Dependencies'
 
-        ws("${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}/") {
-            withEnv(["GOPATH=${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}"]) {
-                env.PATH="${GOPATH}/bin:$PATH"
-    
-                sh 'go version'
-                sh 'go get -u github.com/golang/dep'
-                // sh 'go get github.com/tebeka/go2xunit'
-                
-                //or -update
-                sh 'ensure -vendor-only -v' 
-            }
+        withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin"]) {
+            env.PATH="${GOPATH}/bin:$PATH"
+
+            sh 'go version'
+            sh 'go get -u github.com/golang/dep'
+            // sh 'go get github.com/tebeka/go2xunit'
+            
+            //or -update
+            sh 'ensure -vendor-only -v' 
         }
      }
 }
