@@ -17,7 +17,7 @@ node {
             // sh 'go get github.com/tebeka/go2xunit'
             
             //or -update
-            sh 'ensure -vendor-only -v' 
+            sh 'dep ensure -vendor-only -v' 
         }
      }
 }
