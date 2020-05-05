@@ -19,7 +19,7 @@ pipeline {
                 sh 'cd $GOPATH/src/cmd/project && dep ensure'
             }
         }
-        stage('Test') { 
+        stage('Deploy') { 
             steps {
                 // 
                 echo "Testing"
