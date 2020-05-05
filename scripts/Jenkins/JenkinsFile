@@ -9,8 +9,8 @@ node {
 
     stage('Pre Test'){
         echo 'Pulling Dependencies'
-        ws("${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}/src/github.com/project/repo") {
-            withEnv(["GOROOT=${root}", "GOPATH=${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}/", "PATH+GO=${root}/bin"]) {
+        ws("${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}") {
+            withEnv(["GOPATH=${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}"]) {
                 try{
                     sh 'go version'
                     sh 'go get -u github.com/golang/dep/cmd/dep'
