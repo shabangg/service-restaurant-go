@@ -13,6 +13,7 @@ node {
         withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin"]) {
 
             sh 'go version'
+            sh 'go env'
             sh 'go get -u github.com/golang/dep/cmd/dep'
             // sh 'go get github.com/tebeka/go2xunit'
             
