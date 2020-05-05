@@ -35,10 +35,10 @@ echo "{
 }" > ./scripts/version.json
 
 echo "Building docker image..."
-sudo docker build -f scripts/docker/Dockerfile -t $REPO:$COMMIT .
-sudo docker tag $REPO:$COMMIT $REPO:$TAG
+docker build -f scripts/docker/Dockerfile -t $REPO:$COMMIT .
+docker tag $REPO:$COMMIT $REPO:$TAG
 
-cat token.txt | sudo docker login docker.pkg.github.com -u "rohan-luthra" --password-stdin
+cat token.txt | docker login docker.pkg.github.com -u "rohan-luthra" --password-stdin
 echo "Pushing docker image..."
-sudo docker push $REPO:$TAG
+docker push $REPO:$TAG
 echo "Successfully pushed docker image"
