@@ -9,16 +9,18 @@ node {
 
     stage('Pre Test'){
         echo 'Pulling Dependencies'
-        withEnv(["GOPATH=${WORKSPACE}", "PATH+GO=${root}/bin:${WORKSPACE}/bin", "GOBIN=${WORKSPACE}/bin"]){
-            try{
-                sh 'go version'
-                sh 'go get -u github.com/golang/dep/cmd/dep'
-                sh 'go get -u github.com/golang/lint/golint'
-                
-                //or -update
-                sh 'cd ${GOPATH}/src/cmd/project/ && dep ensure' 
-            } catch (err) {
-                sh "echo static analyis failed.  See report"
+        ws("${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}/src/github.com/project/repo") {
+            withEnv(["GOROOT=${root}", "GOPATH=${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}/", "PATH+GO=${root}/bin"]) {
+                try{
+                    sh 'go version'
+                    sh 'go get -u github.com/golang/dep/cmd/dep'
+                    sh 'go get -u github.com/golang/lint/golint'
+                    
+                    //or -update
+                    sh 'cd ${GOPATH}/src/cmd/project/ && dep ensure' 
+                } catch (err) {
+                    sh "echo static analyis failed.  See report"
+                }
             }
         }
     }
