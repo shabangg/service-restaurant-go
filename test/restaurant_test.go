@@ -38,8 +38,8 @@ func init() {
 	if configFile != "" {
 		viper.SetConfigFile(configFile)
 	} else {
-		viper.AddConfigPath(".")
-		viper.SetConfigName("config")
+		viper.AddConfigPath("./..")
+		viper.SetConfigName("config_test")
 		viper.SetConfigType("yml")
 	}
 
