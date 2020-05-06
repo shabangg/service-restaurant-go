@@ -48,7 +48,7 @@ node {
 
                     sh '''
                         chmod +x ./docker-push.sh
-                        ./docker-push.sh'
+                        ./docker-push.sh
                         $token | docker login docker.pkg.github.com -u "rohan-luthra" --password-stdin
                         echo "Pushing docker image..."
                         docker push $REPO:$TAG
