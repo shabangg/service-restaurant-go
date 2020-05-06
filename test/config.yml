@@ -1,5 +1,5 @@
-databaseuri : mongodb+srv://user:user@cluster0-88spv.mongodb.net/master_new_copied?retryWrites=true&w=majority
-database: master_new_copied
+databaseuri : mongourl
+database: db
 port: 3000
 secretkey: secretKey
 kafka_brokers : 172.18.0.1:19092,172.18.0.1:29092,172.18.0.1:39092
