@@ -58,3 +58,7 @@
   name = "github.com/Shopify/sarama"
   version = "1.26.1"
 
+
+[[constraint]]
+  name = "google.golang.org/grpc"
+  version = "1.28.1"

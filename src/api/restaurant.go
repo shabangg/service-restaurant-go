@@ -15,6 +15,7 @@ import (
 	"google.golang.org/grpc/status"
 )
 
+// GetRestaurants - get all the Restaurants
 func (a *API) GetRestaurants(req *restaurant.Empty, stream restaurant.RestaurantService_GetRestaurantsServer) error {
 
 	ctx := a.App.NewContext()
@@ -47,6 +48,7 @@ func (a *API) GetRestaurants(req *restaurant.Empty, stream restaurant.Restaurant
 	return nil
 }
 
+// AddRestaurant - add a new Restaurant
 func (a *API) AddRestaurant(ctx context.Context, req *restaurant.AddRestaurantReq) (*restaurant.Id, error) {
 
 	fmt.Printf("%v\n", req)
@@ -106,6 +108,7 @@ func (a *API) AddRestaurant(ctx context.Context, req *restaurant.AddRestaurantRe
 
 }
 
+// GetRestaurant - get a Restaurant of id
 func (a *API) GetRestaurant(ctx context.Context, in *restaurant.Id) (*restaurant.Restaurant, error) {
 	context := a.App.NewContext()
 
@@ -125,6 +128,7 @@ func (a *API) GetRestaurant(ctx context.Context, in *restaurant.Id) (*restaurant
 	return restaurantResponse, nil
 }
 
+// UpdateRestaurant - update a Restaurant of id
 func (a *API) UpdateRestaurant(ctx context.Context, in *restaurant.Restaurant) (*restaurant.Id, error) {
 	id, err := primitive.ObjectIDFromHex(in.GetId())
 	if err != nil {
@@ -145,6 +149,7 @@ func (a *API) UpdateRestaurant(ctx context.Context, in *restaurant.Restaurant) (
 	return &restaurant.Id{Id: result}, nil
 }
 
+// DeleteRestaurant - delete a Restaurant of id
 func (a *API) DeleteRestaurant(ctx context.Context, id *restaurant.Id) (*restaurant.Id, error) {
 
 	// context := a.App.NewContext()

@@ -6,7 +6,7 @@ import (
 	"github.com/spf13/viper"
 )
 
-// config databse config
+// Config databse config
 type Config struct {
 	DatabaseURI string
 	Database    string

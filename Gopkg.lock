@@ -423,7 +423,7 @@
   revision = "b5235f65be3618aac92278c41932e3f9007a653a"
 
 [[projects]]
-  digest = "1:f5fd2b968077b969e1027a3864a4ee714ce23c9cfab9b43764c20c893f03db9f"
+  digest = "1:efab431b449be732160c8af95414749ec5476270ed690ae83bf35e0b8bb68987"
   name = "google.golang.org/grpc"
   packages = [
     ".",
@@ -467,6 +467,8 @@
     "stats",
     "status",
     "tap",
+    "test",
+    "test/bufconn",
   ]
   pruneopts = "UT"
   revision = "ac54eec90516cee50fc6b9b113b34628a85f976f"
@@ -622,6 +624,8 @@
     "google.golang.org/grpc/keepalive",
     "google.golang.org/grpc/reflection",
     "google.golang.org/grpc/status",
+    "google.golang.org/grpc/test",
+    "google.golang.org/grpc/test/bufconn",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1

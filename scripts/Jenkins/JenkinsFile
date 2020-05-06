@@ -4,8 +4,11 @@ node {
 
     try{
 
-        ws("${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}/src/github.com/rohan-luthra/service-restaurant-go") {
-            withEnv(["GOROOT=${goHome}", "GOPATH=${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}", "PATH+GO=${goHome}/bin"]) {
+        // ws("${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}/src/github.com/rohan-luthra/microservice-grpc-go/service-restaurants-go") {
+        //     withEnv(["GOROOT=${goHome}", "GOPATH=${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}", "PATH+GO=${goHome}/bin"]) {
+
+        ws("${JENKINS_HOME}/workspace/${JOB_NAME}/src/github.com/rohan-luthra/microservice-grpc-go/service-restaurants-go") {
+        withEnv(["GOROOT=${goHome}", "GOPATH=${JENKINS_HOME}/workspace/${JOB_NAME}", "PATH+GO=${goHome}/bin"]) {
 
                 stage('Checkout'){
                     echo 'Checking out SCM'
@@ -15,16 +18,32 @@ node {
                 }
 
                 
-                stage('Pre Test'){
+                stage('Setting Up Project'){
                     echo 'Pulling Dependencies'
 
                     sh 'go version'
                     sh 'go get -u github.com/golang/dep/cmd/dep'
+                    sh 'go get -u golang.org/x/lint/golint'
                     // sh 'go get -u github.com/golang/lint/golint'
-                    // sh 'go get github.com/tebeka/go2xunit'
-                    
+            
                     //or -update
-                    sh '$GOPATH/bin/dep ensure'  
+                    sh '$GOPATH/bin/dep ensure -vendor-only -v'  
+                }
+
+                stage('Test'){
+
+                    echo "Skiping linting"
+                    // sh 'go lint src/*'
+
+                    echo "Testing"
+                    sh 'go test ./test -v'
+                }
+
+                stage('Dokcer Build'){
+
+                        sh 'chmod +x ./../../docker-push.sh'
+                        sh './../../docker-push.sh'
+
                 }
 
             }
