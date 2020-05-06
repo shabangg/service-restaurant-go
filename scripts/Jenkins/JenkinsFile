@@ -48,10 +48,6 @@ node {
 
                     sh 'chmod +x ./docker-push.sh'
                     sh './docker-push.sh'
-                    sh 'GITHUB_DEVELOPER_TOKEN | docker login docker.pkg.github.com -u "rohan-luthra" --password-stdin'
-                    sh 'echo "Pushing docker image"'
-                    sh 'docker push $REPO:$TAG'
-                    sh 'echo "Successfully pushed docker image"'
 
             }
 
