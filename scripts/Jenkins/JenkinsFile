@@ -1,57 +1,57 @@
 node {
     def goHome = tool('Go 1.13.7')
 
+    // ws("${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}/src/github.com/rohan-luthra/microservice-grpc-go/service-restaurants-go") {
+    //     withEnv(["GOROOT=${goHome}", "GOPATH=${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}", "PATH+GO=${goHome}/bin"]) {
 
-    try{
+    ws("${JENKINS_HOME}/workspace/${JOB_NAME}/src/github.com/rohan-luthra/microservice-grpc-go/service-restaurants-go") {
+    withEnv(["GOROOT=${goHome}", "GOPATH=${JENKINS_HOME}/workspace/${JOB_NAME}", "PATH+GO=${goHome}/bin"]) {
 
-        // ws("${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}/src/github.com/rohan-luthra/microservice-grpc-go/service-restaurants-go") {
-        //     withEnv(["GOROOT=${goHome}", "GOPATH=${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}", "PATH+GO=${goHome}/bin"]) {
+            stage('Checkout'){
+                echo 'Checking out SCM'
+                checkout scm
 
-        ws("${JENKINS_HOME}/workspace/${JOB_NAME}/src/github.com/rohan-luthra/microservice-grpc-go/service-restaurants-go") {
-        withEnv(["GOROOT=${goHome}", "GOPATH=${JENKINS_HOME}/workspace/${JOB_NAME}", "PATH+GO=${goHome}/bin"]) {
-
-                stage('Checkout'){
-                    echo 'Checking out SCM'
-                    checkout scm
-                    sh 'ls'
-                    sh 'pwd'
+                withCredentials([file(credentialsId: 'MICRO_CONGIF_YAML', variable: 'config'),  
+                    file(credentialsId: 'MICRO_CONFIG_YAML_TEST', variable: 'config_test')]) {
+                        
+                    sh "cp \$config config.yml"
+                    sh "cp \$config_test config_test.yml"
                 }
-
                 
-                stage('Setting Up Project'){
-                    echo 'Pulling Dependencies'
+                sh 'ls'
+                sh 'pwd'
+            }
 
-                    sh 'go version'
-                    sh 'go get -u github.com/golang/dep/cmd/dep'
-                    sh 'go get -u golang.org/x/lint/golint'
-                    // sh 'go get -u github.com/golang/lint/golint'
             
-                    //or -update
-                    sh '$GOPATH/bin/dep ensure -vendor-only -v'  
-                }
+            stage('Setting Up Project'){
+                echo 'Pulling Dependencies'
 
-                stage('Test'){
+                sh 'go version'
+                sh 'go get -u github.com/golang/dep/cmd/dep'
+                sh 'go get -u golang.org/x/lint/golint'
+                // sh 'go get -u github.com/golang/lint/golint'
+        
+                //or -update
+                sh '$GOPATH/bin/dep ensure -vendor-only -v'  
+            }
 
-                    echo "Skiping linting"
-                    // sh 'go lint src/*'
+            stage('Test'){
 
-                    echo "Testing"
-                    sh 'go test ./test -v'
-                }
+                echo "Skiping linting"
+                // sh 'go lint src/*'
 
-                stage('Dokcer Build'){
+                echo "Testing"
+                sh 'go test ./test -v'
+            }
 
-                        sh 'chmod +x ./docker-push.sh'
-                        sh './docker-push.sh'
+            stage('Dokcer Build'){
 
-                }
+                    sh 'chmod +x ./docker-push.sh'
+                    sh './docker-push.sh'
 
             }
+
         }
-
-    }catch (err){
-        sh 'echo ERROR'
     }
-
     
 }
