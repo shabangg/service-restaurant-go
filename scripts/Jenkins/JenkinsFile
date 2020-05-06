@@ -41,8 +41,8 @@ node {
 
                 stage('Dokcer Build'){
 
-                        sh 'chmod +x ./../../docker-push.sh'
-                        sh './../../docker-push.sh'
+                        sh 'chmod +x ./docker-push.sh'
+                        sh './docker-push.sh'
 
                 }
 

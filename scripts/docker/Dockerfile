@@ -16,7 +16,7 @@ WORKDIR /go/src/github.com/rohan-luthra/microservice-grpc-go/service-restaurants
 
 # install dependencies
 COPY Gopkg.* ./
-RUN dep ensure -vendor-only -v
+# RUN dep ensure -vendor-only -v
 
 # copy source and generate a build
 COPY . .
