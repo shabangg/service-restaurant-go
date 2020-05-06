@@ -37,8 +37,3 @@ echo "{
 echo "Building docker image..."
 docker build -f scripts/docker/Dockerfile -t $REPO:$COMMIT .
 docker tag $REPO:$COMMIT $REPO:$TAG
-
-$GITHUB_DEVELOPER_TOKEN | docker login docker.pkg.github.com -u "rohan-luthra" --password-stdin
-echo "Pushing docker image..."
-docker push $REPO:$TAG
-echo "Successfully pushed docker image"
