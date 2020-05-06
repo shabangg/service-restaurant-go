@@ -1,4 +1,4 @@
-databaseuri : mongodb+srv://user:user@cluster0-88spv.mongodb.net/master_new_copied?retryWrites=true&w=majority
+databaseuri : mongourl
 database: master_new_copied
 port: 3000
 secretkey: secretKey
