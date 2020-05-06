@@ -1,5 +1,5 @@
 databaseuri : mongourl
-database: master_new_copied
+database: db
 port: 3000
 secretkey: secretKey
 kafka_brokers : 172.18.0.1:19092,172.18.0.1:29092,172.18.0.1:39092
